@@ -11,6 +11,9 @@
 *.sln.docstates
 *.env
 
+# Make it use the parent version
+/Directory.Packages.props
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
