@@ -18,6 +18,13 @@ public abstract class TimeTrackedEntity
         LastActive = DateTime.UtcNow;
     }
 
+    public void CreatedAt(DateTime time)
+    {
+        Created = time;
+        Modified = time;
+        LastActive = time;
+    }
+
     public void ModifiedNow()
     {
         Modified = DateTime.UtcNow;
