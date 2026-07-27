@@ -110,3 +110,9 @@ public class Result<T>
         CancellationToken ct = default) =>
         IsSuccess ? onSuccess(Value, ct) : onFailure(ErrorMessage, ct);
 }
+
+public static class ResultExtensions
+{
+    public static Option<T> ToOption<T>(this Result<T> result) =>
+        result.Match(Option<T>.Some, _ => Option<T>.None());
+}
