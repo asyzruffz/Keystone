@@ -13,9 +13,17 @@ public abstract class TimeTrackedEntity
 
     protected void CreatedNow()
     {
-        Created = DateTime.UtcNow;
-        Modified = DateTime.UtcNow;
-        LastActive = DateTime.UtcNow;
+        CreatedAt(DateTime.UtcNow);
+    }
+
+    public void ModifiedNow()
+    {
+        ModifiedAt(DateTime.UtcNow);
+    }
+
+    public void ActiveNow()
+    {
+        ActiveAt(DateTime.UtcNow);
     }
 
     public void CreatedAt(DateTime time)
@@ -25,13 +33,13 @@ public abstract class TimeTrackedEntity
         LastActive = time;
     }
 
-    public void ModifiedNow()
+    public void ModifiedAt(DateTime time)
     {
-        Modified = DateTime.UtcNow;
+        Modified = time;
     }
 
-    public void ActiveNow()
+    public void ActiveAt(DateTime time)
     {
-        LastActive = DateTime.UtcNow;
+        LastActive = time;
     }
 }
